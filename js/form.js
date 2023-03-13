@@ -8,6 +8,8 @@ botaoAdicionar.addEventListener('click', function(evento){
 
     let paciente = obtemPacienteDoForm(form)
 
+    adicionaPacienteNaTabela(paciente)
+
     console.log(paciente)
 
     form.reset()
@@ -42,7 +44,9 @@ function montarTr(paciente){
 
 function adicionaPacienteNaTabela(paciente){
     let pacienteTr = montarTr(paciente)
-    
+    let tabela = document.querySelector('#tabela-pacientes')
+    tabela.appendChild(pacienteTr)
+
 }
 
 function montarTd (dado, classe){
